@@ -1,0 +1,21 @@
+# Implementing equal-frequency partitioning in R
+library(dplyr)
+sales_price <- c(5, 10, 11, 13, 15, 35, 50, 55, 72, 92, 204, 215)
+records_per_group <- length(sales_price) / 3
+bins <- cut(sales_price, breaks = quantile(sales_price, probs = seq(0, 1, by = 1/records_per_group)))
+table(bins)
+
+# Implementing equal-width partitioning in R
+library(dplyr)
+sales_price <- c(5, 10, 11, 13, 15, 35, 50, 55, 72, 92, 204, 215)
+range_of_data <- range(sales_price)
+width_per_group <- (range_of_data[2] - range_of_data[1]) / 3
+bins <- cut(sales_price, breaks = seq(range_of_data[1], range_of_data[2], by = width_per_group))
+table(bins)
+
+# Implementing clustering in R
+library(stats)
+sales_price <- c(5, 10, 11, 13, 15, 35, 50, 55, 72, 92, 204, 215)
+sales_price_matrix <- matrix(sales_price, ncol = 1)
+cluster_result <- kmeans(sales_price_matrix, centers = 3)
+table(cluster_result$cluster)
