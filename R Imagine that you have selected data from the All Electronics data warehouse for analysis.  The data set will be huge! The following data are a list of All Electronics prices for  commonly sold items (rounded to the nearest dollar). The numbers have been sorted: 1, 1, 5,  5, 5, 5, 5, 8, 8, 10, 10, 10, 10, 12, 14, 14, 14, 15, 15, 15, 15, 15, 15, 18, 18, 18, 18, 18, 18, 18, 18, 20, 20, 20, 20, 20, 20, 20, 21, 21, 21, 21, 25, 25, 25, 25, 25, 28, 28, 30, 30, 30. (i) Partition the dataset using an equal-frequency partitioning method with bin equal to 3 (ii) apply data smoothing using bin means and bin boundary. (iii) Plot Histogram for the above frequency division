@@ -1,0 +1,22 @@
+# Define the data
+prices <- c(1, 1, 5, 5, 5, 5, 5, 8, 8, 10, 10, 10, 10, 12, 14, 14, 14, 15, 15, 15, 15, 15, 15, 18, 18, 18, 18, 18, 18, 18, 18, 20, 20, 20, 20, 20, 20, 20, 21, 21, 21, 21, 25, 25, 25, 25, 25, 28, 28, 30, 30, 30)
+
+# Calculate the equal-frequency partitioning
+partitions <- cut(prices, breaks = 3, labels = FALSE)
+
+# Calculate the bin means and bin boundaries
+bin_means <- tapply(prices, partitions, mean)
+bin_boundaries <- tapply(prices, partitions, function(x) c(min(x), max(x)))
+
+# Apply data smoothing using bin means and bin boundaries
+smoothed_prices <- bin_means[partitions]
+for (i in seq_along(partitions)) {
+  if (prices[i] < bin_boundaries[1, partitions[i]]) {
+    smoothed_prices[i] <- bin_means[partitions[i]]
+  } else if (prices[i] > bin_boundaries[2, partitions[i]]) {
+    smoothed_prices[i] <- bin_means[partitions[i]]
+  }
+}
+
+# Plot a histogram of the frequency division
+hist(prices, breaks = 3, main = "Histogram of Prices")
