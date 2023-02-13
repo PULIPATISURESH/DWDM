@@ -1,0 +1,15 @@
+# Define the data
+age <- c(23, 23, 27, 27, 39, 41, 47, 49, 50, 52, 54, 54, 56, 57, 58, 58, 60, 61)
+fat_pct <- c(9.5, 26.5, 7.8, 17.8, 31.4, 25.9, 27.4, 27.2, 31.2, 34.6, 42.5, 28.8, 33.4, 30.2, 34.1, 32.9, 41.2, 35.7)
+
+# Calculate mean, median, and standard deviation of age and %fat
+cat("Age: Mean =", mean(age), "Median =", median(age), "Standard Deviation =", sd(age), "\n")
+cat("%fat: Mean =", mean(fat_pct), "Median =", median(fat_pct), "Standard Deviation =", sd(fat_pct), "\n")
+
+# Draw boxplots for age and %fat
+boxplot(age, main="Age Boxplot")
+boxplot(fat_pct, main="%fat Boxplot")
+
+# Draw a scatter plot and a q-q plot based on these two variables
+plot(age, fat_pct, main="Scatterplot of Age vs. %fat", xlab="Age", ylab="%fat")
+qqplot(age, fat_pct, main="Q-Q Plot of Age vs. %fat")
