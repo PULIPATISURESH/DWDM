@@ -1,0 +1,14 @@
+# create a vector of pencil counts
+pencils <- c(25, 23, 12, 11, 6, 7, 8, 9, 10)
+
+# calculate mean
+mean_pencils <- mean(pencils)
+print(mean_pencils)
+
+# calculate median
+median_pencils <- median(pencils)
+print(median_pencils)
+
+# calculate mode
+mode_pencils <- names(table(pencils))[table(pencils) == max(table(pencils))]
+print(mode_pencils)
