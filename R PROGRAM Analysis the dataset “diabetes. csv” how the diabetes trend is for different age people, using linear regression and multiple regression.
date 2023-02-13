@@ -1,0 +1,10 @@
+# Load the diabetes dataset
+diabetes <- read.csv("diabetes.csv")
+
+# Simple linear regression
+lm_age_diabetes <- lm(diabetes$DiabetesPedigreeFunction ~ diabetes$Age)
+summary(lm_age_diabetes)
+
+# Multiple regression
+lm_age_bmi_pedigree <- lm(DiabetesPedigreeFunction ~ Age + BMI + Glucose, data = diabetes)
+summary(lm_age_bmi_pedigree)
