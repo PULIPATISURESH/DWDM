@@ -1,0 +1,31 @@
+# Define min and max values
+min_val <- 50000
+max_val <- 100000
+
+# Perform min-max normalization
+normalized_data <- (80 - min_val) / (max_val - min_val)
+
+# Scale to desired range (0 to 1)
+final_normalized_data <- normalized_data * (1 - 0) + 0
+
+# Print the final normalized data
+final_normalized_data
+
+# Define min and max values
+min_val <- min(c(200, 300, 400, 600, 1000))
+max_val <- max(c(200, 300, 400, 600, 1000))
+
+# Perform min-max normalization
+normalized_data <- (c(200, 300, 400, 600, 1000) - min_val) / (max_val - min_val)
+
+# Scale to desired range (0 to 1)
+final_normalized_data <- normalized_data * (1 - 0) + 0
+
+# Print the final normalized data
+final_normalized_data
+
+# Perform z-score normalization
+normalized_data <- (c(200, 300, 400, 600, 1000) - mean(c(200, 300, 400, 600, 1000))) / sd(c(200, 300, 400, 600, 1000))
+
+# Print the normalized data
+normalized_data
