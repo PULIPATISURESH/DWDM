@@ -1,0 +1,26 @@
+# Define function for min-max normalization
+minmax_norm <- function(x) {
+  (x - min(x)) / (max(x) - min(x))
+}
+
+# Apply min-max normalization to age
+age <- c(23, 23, 27, 27, 39, 41, 47, 49, 50, 52, 54, 54, 56, 57, 58, 58, 60, 61)
+minmax_norm(age)
+
+# Define function for z-score normalization
+zscore_norm <- function(x) {
+  (x - mean(x)) / sd(x)
+}
+
+# Apply z-score normalization to age
+age <- c(23, 23, 27, 27, 39, 41, 47, 49, 50, 52, 54, 54, 56, 57, 58, 58, 60, 61)
+zscore_norm(age)
+
+# Define function for decimal scaling normalization
+decimal_norm <- function(x) {
+  x / 10^ceiling(log10(max(abs(x))))
+}
+
+# Apply decimal scaling normalization to age
+age <- c(23, 23, 27, 27, 39, 41, 47, 49, 50, 52, 54, 54, 56, 57, 58, 58, 60, 61)
+decimal_norm(age)
