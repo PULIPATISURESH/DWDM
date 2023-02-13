@@ -1,0 +1,13 @@
+set.seed(123)
+age <- c(rnorm(20, 3, 1), rnorm(20, 8, 1), rnorm(20, 13, 1), rnorm(20, 18, 1), rnorm(20, 23, 1))
+tumorsize <- rnorm(100, 5, 1)
+invnodes <- rnorm(100, 3, 1)
+
+# Histogram
+hist(tumorsize)
+
+# Scatterplot
+plot(tumorsize, invnodes)
+
+# Boxplot
+boxplot(tumorsize ~ age)
