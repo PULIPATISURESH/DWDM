@@ -1,0 +1,10 @@
+# Create vectors for AvgSpeed and TotalTime
+AvgSpeed <- c(78, 81, 82, 74, 83, 82, 77, 80, 70)
+TotalTime <- c(39, 37, 36, 42, 35, 36, 40, 38, 46)
+
+# Calculate standard deviation of AvgSpeed and TotalTime
+sd(AvgSpeed)
+sd(TotalTime)
+# Calculate variance of AvgSpeed and TotalTime
+var(AvgSpeed)
+var(TotalTime)
