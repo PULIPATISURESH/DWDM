@@ -1,0 +1,25 @@
+# create a vector of marks
+marks <- c(55, 60, 71, 63, 55, 65, 50, 55, 58, 59, 61, 63, 65, 67, 71, 72, 75)
+
+# (a) equal-frequency partitioning (3 bins)
+eq_freq_bins <- cut(marks, breaks = 3, labels = FALSE)
+
+# (b) equal-width partitioning (3 bins)
+eq_width_bins <- cut(marks, breaks = 3, labels = FALSE, 
+                     include.lowest = TRUE, dig.lab = 2)
+
+# (c) clustering (3 bins)
+library(cluster)
+kmeans_bins <- kmeans(marks, centers = 3)$cluster
+
+# plot histogram for each partitioning method
+par(mfrow=c(1,3))
+hist(marks[eq_freq_bins == 1], main="Equal-Frequency Partitioning (Bin 1)")
+hist(marks[eq_freq_bins == 2], main="Equal-Frequency Partitioning (Bin 2)")
+hist(marks[eq_freq_bins == 3], main="Equal-Frequency Partitioning (Bin 3)")
+hist(marks[eq_width_bins == 1], main="Equal-Width Partitioning (Bin 1)")
+hist(marks[eq_width_bins == 2], main="Equal-Width Partitioning (Bin 2)")
+hist(marks[eq_width_bins == 3], main="Equal-Width Partitioning (Bin 3)")
+hist(marks[kmeans_bins == 1], main="Clustering (Bin 1)")
+hist(marks[kmeans_bins == 2], main="Clustering (Bin 2)")
+hist(marks[kmeans_bins == 3], main="Clustering (Bin 3)")
