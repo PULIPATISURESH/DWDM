@@ -1,0 +1,11 @@
+# Create a vector for the number of mobile phones sold
+x <- c(4, 1, 5, 7, 10, 2, 50, 25, 90, 36)
+
+# Create a vector for the amount of money
+y <- c(12, 5, 13, 19, 31, 7, 153, 72, 275, 110)
+
+# Plot the data as a scatter plot
+plot(x, y, main = "Mobile Phones Sold vs. Amount of Money", xlab = "Mobile Phones Sold", ylab = "Amount of Money")
+# Customize the scatter plot
+plot(x, y, main = "Mobile Phones Sold vs. Amount of Money", xlab = "Mobile Phones Sold", ylab = "Amount of Money", col = "blue", pch = 16, xlim = c(0, 100), ylim = c(0, 300))
+abline(lm(y ~ x), col = "red")
